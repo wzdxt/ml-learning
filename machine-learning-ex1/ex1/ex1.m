@@ -63,7 +63,7 @@ alpha = 0.01;
 computeCost(X, y, theta)
 
 % run gradient descent
-theta = gradientDescent(X, y, theta, alpha, iterations);
+[theta, J_history] = gradientDescent(X, y, theta, alpha, iterations);
 
 % print theta to screen
 fprintf('Theta found by gradient descent: ');
@@ -116,7 +116,7 @@ xlabel('\theta_0'); ylabel('\theta_1');
 % Contour plot
 figure;
 % Plot J_vals as 15 contours spaced logarithmically between 0.01 and 100
-contour(theta0_vals, theta1_vals, J_vals, logspace(-2, 3, 20))
+contour(theta0_vals, theta1_vals, J_vals, logspace(0, 3, 20))
 xlabel('\theta_0'); ylabel('\theta_1');
 hold on;
 plot(theta(1), theta(2), 'rx', 'MarkerSize', 10, 'LineWidth', 2);
